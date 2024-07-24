@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block metatitle %}
+    Pokemon : Cétégorie
+{% endblock %}
+
+
+{% block body %}
+
+    <h1> Catégories </h1>
+
+        <ul>
+            {% for category in categories %}
+                <li>
+                    Couleurs : <strong>{{ category }}</strong>
+                </li>
+            {% endfor %}
+        </ul>
+
+{% endblock %}
+

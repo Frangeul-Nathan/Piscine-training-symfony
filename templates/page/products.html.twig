@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block metatitle %}
+    Liste des produits :
+{% endblock %}
+
+
+{% block body %}
+
+   <ul>
+    {% for product in products %}
+        <li>
+            <div>
+                {# <img src="{{ product.image }}" alt="{{ product.title }}" width="200"> #}
+                <h2>{{ product.title }}</h2>
+                <a href="{{ path('show_product', {'idProduct': product.id}) }}">Voir les détails du produit</a>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

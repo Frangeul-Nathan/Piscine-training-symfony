@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block metatitle %}
+    Formulaire Age 
+{% endblock %}
+
+
+{% block body %}
+
+   <form method="get" action="{{ path('poker') }}">
+        <label for="age">Âge:</label>
+        <input type="number" id="age" name="age" min="0">
+        <button type="submit">Soumettre</button>
+    </form>
+
+{% endblock %}

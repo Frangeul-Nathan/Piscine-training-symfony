@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block metatitle %}
+    Détails du produit 
+{% endblock %}
+
+
+{% block body %}
+    <h1> Détails du produit </h1>
+    
+    <div>
+        <h2>{{ product.title }}</h2>
+        <p>Prix: €{{ product.price }}</p>
+                 {% if product.price_reduction > 0 %}
+                    <p>Réduction de prix: ${{ product.price_reduction }}</p>
+                {% else %}
+                    <p>Aucune réduction</p>
+                {% endif %}
+        <p>Catégorie: {{ product.categories|join(', ') }}</p>
+    </div>
+
+{% endblock %}
