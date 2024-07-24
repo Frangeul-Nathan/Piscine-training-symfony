@@ -11,11 +11,13 @@
     <div>
         <h2>{{ product.title }}</h2>
         <p>Prix: €{{ product.price }}</p>
+        {# Si le price reduction est supérieur à 0 alors j'affiche la réduction sinon j'affiche qu'il n'y a aucune réduction #}
                  {% if product.price_reduction > 0 %}
                     <p>Réduction de prix: ${{ product.price_reduction }}</p>
                 {% else %}
                     <p>Aucune réduction</p>
                 {% endif %}
+                {# |join est une méthode twig pour transformer un tableau de chaines en une seule chaine, j'y ajoute une virgule pour la lisibilité #}
         <p>Catégorie: {{ product.categories|join(', ') }}</p>
     </div>
 
