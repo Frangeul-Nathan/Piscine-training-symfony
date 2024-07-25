@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\PokemonRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -128,6 +129,28 @@ class PokemonController extends AbstractController {
 
         return $this->render('page/pokemon_show.html.twig', [
             'pokemon' => $pokemonFound
+        ]);
+
+    }
+
+    #[Route('/pokemon-list-db', name: 'pokemon_list_db')]
+    public function listPokemonFromDb(PokemonRepository $pokemonRepository) {
+
+        $pokemons = $pokemonRepository->findAll();
+
+
+        return $this->render('page/pokemon_list_db.html.twig', [
+            'pokemons' => $pokemons
+        ]);
+    }
+
+    #[Route('/pokemon-show-db/{idPokemon}', name: 'show_pokemon_db')]
+    public function showPokemonFromDb(PokemonRepository $pokemonRepository, int $idPokemon) : Response
+    {
+        $pokemon = $pokemonRepository->find($idPokemon);
+
+        return $this->render('page/pokemon_show_db.html.twig', [
+            'pokemon' => $pokemon
         ]);
 
     }

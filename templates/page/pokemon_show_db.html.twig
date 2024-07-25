@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block metatitle %}
+    Détails du Pokémon 
+{% endblock %}
+
+
+{% block body %}
+    <h1> Détails du Pokémon </h1>
+    
+    <div>
+        <h2>{{ pokemon.title }}</h2>
+        <img src="{{ pokemon.image }}" alt="{{ pokemon.title }}" />
+        <p>{{ pokemon.content }}</p>
+        <p>{{ pokemon.type }}</p>
+    </div>
+
+{% endblock %}

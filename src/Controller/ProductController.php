@@ -61,7 +61,6 @@ class ProductController extends AbstractController
 
     }
  
-    // Annotation : permet de créer une route c'est à dire nouvelle page sur notre appli, quand l'URL est appelé ça exécute automatiquement la méthode définit sous la route
     #[Route('/products', name: 'products')]
     public function product(): Response
     {
@@ -76,9 +75,6 @@ class ProductController extends AbstractController
     public function showProduct($idProduct)  : Response
     {
 
-        // $request = Request::createFromGlobals();
-        // $idPokemon = $request->query->get('id');
-
         $productFound = null;
 
         foreach ($this->products as $product) {
@@ -92,4 +88,5 @@ class ProductController extends AbstractController
         ]);
 
     }
+
 }
