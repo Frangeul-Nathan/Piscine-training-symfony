@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+
+{% block metatitle %}
+    Pokemon : insert
+{% endblock %}
+
+{% block body %}
+
+ <form method="post">
+
+        <label>
+            Titre
+            <input type="text" name="title">
+        </label>
+
+        <label>
+            Image
+            <input type="text" name="image">
+        </label>
+
+        <label>
+            Description
+            <input type="text" name="content">
+        </label>
+
+        <label>
+            Type
+            <input type="text" name="type">
+        </label>
+
+
+        <input type="submit" />
+    
+    {% if pokemon %}
+
+    <p>Le pokemon {{ pokemon.title }} a bien créé ! </p>
+
+    {% endif %}
+
+{% endblock %}

@@ -18,6 +18,7 @@
                         <p>{{ pokemon.title }}</p>
                         {# <img src="{{ pokemon.image }}" alt="{{ pokemon.title }}" /> #}
                         <a href="{{ path('show_pokemon_db', {'idPokemon': pokemon.id}) }}">Voir le pokemon</a>
+                        <a href="{{ path('delete_pokemon', {'idPokemon': pokemon.id}) }}">Supprimer le pokemon</a>
                     </div>
 
                 </article>
